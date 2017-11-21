@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 import Butter from 'buttercms'
 
-const butter = Butter('de55d3f93789d4c5c26fb07445b680e8bca843bd');
+const butter = Butter('6dfb2664b4a84f2791d4501c9bd58d2aac116bde');
 
 class BlogHome extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       loaded: false
     };
@@ -25,7 +24,6 @@ class BlogHome extends Component {
 
   componentWillMount() {
     let page = this.props.params.page || 1;
-
     this.fetchPosts(page)
   }
 
