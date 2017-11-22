@@ -8,7 +8,6 @@ class BlogPost extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       loaded: false
     };
@@ -22,6 +21,7 @@ class BlogPost extends Component {
         loaded: true,
         post: resp.data.data
       })
+      console.log(resp.data);
     });
   }
 
@@ -36,6 +36,7 @@ class BlogPost extends Component {
             <meta name="description" content={post.meta_description} />
             <meta name="og:image" content={post.featured_image} />
           </Helmet>
+
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{__html: post.body}} />
         </div>
